@@ -1,0 +1,14 @@
+<!-- componente que muestra la lista de gastos-->
+
+<aura:component>
+    <aura:attribute name="expenses" type="Expense__c[]"/>
+    <lightning:card title="Expenses">
+        <p class="slds-p-horizontal_small">
+            
+            <!-- itera por cada uno de ellos para crear por cada uno un expense item-->
+            <aura:iteration items="{!v.expenses}" var="expense">
+                <c:expenseItem expense="{!expense}"/>
+            </aura:iteration>
+        </p>
+    </lightning:card>
+</aura:component>
